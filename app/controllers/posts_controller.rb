@@ -9,11 +9,12 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new # you need a Model to use Post.new
+		# @post = Post.new # you need a Model to use Post.new
+		@post = current_user.posts.build
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@post = current_user.posts.build(post_params)
 		@post.save
 		redirect_to @post
 	end
