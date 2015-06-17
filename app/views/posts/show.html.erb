@@ -1,9 +1,22 @@
-<h3><%= @post.title %></h3>
-<p><%= @post.body %></p>
-<small>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.email %></small> <br>
-<% if @post.user == current_user %>
 
-	<%= link_to "Edit", edit_post_path(@post) %>
+<div class="post">
+	<div class="post-header">
+		<h2><%= @post.title %></h2>
+		<small>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.username %></small>
+		
+		<% if @post.user == current_user %>
+			<div class="pull-right">
 
-	<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?'} %>
-<% end %>
+				<%= link_to edit_post_path(@post) do %>
+					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+				<% end %>
+
+				<%= link_to post_path(@post), method: :delete, data: { confirm: 'Are you sure?'} do %>
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+				<% end %>
+			</div>	
+		<% end %>
+	</div>
+
+	<p><%= @post.body %></p>
+</div>

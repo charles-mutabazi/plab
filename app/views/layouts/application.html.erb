@@ -2,27 +2,77 @@
 <html>
 <head>
   <title>Plab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h3><%= link_to "P-Lab", root_path %></h3>
 
-<% if user_signed_in? %>
-	<%= link_to "New Post", new_post_path %>
-	<%= link_to "Account", edit_user_registration_path %>
-	<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-<% else %>
-	<%= link_to "Sign Up", new_user_registration_path %>
-	<%= link_to "Sign In", new_user_session_path %>
-<% end %>
+<nav class="navbar navbar-static-top main-navbar">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "P-Lab", root_path, class: "navbar-brand" %>
+    </div>
 
-<% flash.each do |name, msg| %>
-	<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-<% end %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+		<% if user_signed_in? %>
+			<li><%= link_to "New Post", new_post_path %></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username%><span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><%= link_to "Account", edit_user_registration_path %></li>
+					<li><li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li></li>
+				</ul>
+			</li>
+		<% else %>
+			<li><%= link_to "Sign Up", new_user_registration_path %></li>
+			<li><%= link_to "Sign In", new_user_session_path %></li>
+		<% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
 
-<%= yield %>
+<div class="masterhead">
+	<div class="container">
+		<h1>Hello, world!</h1>
+		<p>...</p>
+		<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>	
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+	  <div class="col-sm-8">
+	    <% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+		<% end %>
+
+		<%= yield %>
+	  </div>
+
+	  <div class="col-sm-4">
+	  	<h2>Featured Topic </h2>
+	  </div>
+
+	</div>
+</div>
+
+<footer class="main-footer">
+	<div class="container">
+		Created by Mutabazi C.
+	</div>
+</footer>
 
 </body>
 </html>

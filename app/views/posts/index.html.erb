@@ -1,4 +1,12 @@
+
 <% @posts.each do |post| %>
-	<h3><%= link_to post.title, post %></h3>
-	<small>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %></small>
+	<div class="post">
+		<div class="post-header">
+			<h2><%= link_to post.title, post %></h2>
+			<small>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></small>
+		</div>
+		<p class="post-body">
+			<%= post.body %>
+		</p>
+	</div>
 <% end %>
