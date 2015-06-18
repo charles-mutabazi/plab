@@ -21,10 +21,12 @@
 html, body{
 	/*font-family: "Helvetica Neue Thin", sans-serif;*/
 	font-weight: 200;
+	color: #0B1C1E;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 200;
+	margin: 10px 0; 
 }
 
 input[type="submit"], button {
@@ -35,7 +37,7 @@ input[type="submit"], button {
 	touch-action: manipulation;
 	cursor: pointer;
 	background: transparent;
-	border: 1px solid #03a72f;
+	border: 1px solid #0B1C1E;
 	white-space: nowrap;
 	padding: 6px 12px;
 	font-size: 14px;
@@ -44,7 +46,7 @@ input[type="submit"], button {
 }
 
 input[type="submit"]:hover, button:hover {
-	background: #03a72f;
+	background: #0B1C1E;
 	color: #fff
 }
 
@@ -56,7 +58,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 	padding: 6px 12px;
 	font-size: 14px;
 	line-height: 1.42857143;
-	color: #555555;
+	color: #0B1C1E;
 	background-color: #fff;
 	background-image: none;
 	border: 1px solid #ccc;
@@ -74,6 +76,7 @@ textarea {
 	padding: 6px 12px;
 	border: 1px solid #ccc;
 	border-radius: 2px;
+	color: #0B1C1E;
 
 }
 
@@ -83,20 +86,52 @@ textarea {
 	-webkit-box-shadow: none;
 }
 
+.alert {
+	margin-bottom: 10px;
+	border-radius: 2px;
+}
+
 .masterhead {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	font-size: 24px;
-	text-align: left;
-	background: lightgrey;
+	background: url('/assets/banner3.jpg') no-repeat center center fixed;
+	background-size: cover;
 	text-align: center;
+	margin-bottom: 10px;
+
+	h1 {
+		color: white;
+		small {
+			font-size: 20px;
+			font-weight: 200;
+		}
+	}
+	
 }
 
 .main-navbar {
 	margin-bottom: 0;
 	background-color: #fff;
 	border-bottom: 0;
+
+	a {
+		color: #0B1C1E;
+	}
 }
+
+.actions {
+	border-top: 1px solid #e8e8e8;
+	padding-top: 10px;
+	margin: 10px 0;
+
+	input[type="submit"], button {
+		width: 100%;
+		font-weight: normal;
+	}
+
+}
+
 .main-footer {
 	padding-top: 20px;
 	padding-bottom: 20px;
