@@ -107,17 +107,34 @@ textarea {
 			font-weight: 200;
 		}
 	}
-	
 }
 
 .main-navbar {
 	margin-bottom: 0;
 	background-color: #fff;
 	border-bottom: 0;
-
+	
+	.icon-bar {
+		background: #0B1C1E;
+	}
+	.navbar-toggle:hover {
+		.icon-bar {
+			background: white;
+		}
+	}
+	
 	a {
 		color: #0B1C1E;
 	}
+	li {
+		a:hover {
+			background: transparent;
+		}
+		.link_btn {
+			padding: 8px 0;
+		}
+	}
+	
 }
 
 .actions {

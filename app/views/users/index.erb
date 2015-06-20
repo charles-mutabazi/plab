@@ -6,7 +6,12 @@
 			<%= image_tag("avatar.png", :alt => "Profile Image", class: "img thumbnail") %>
 		</div>
 		<div class="col-xs-8">
-			<h1> <%= link_to user.full_name, user %> <small><%= user.username %></small> </h1>
+		<% if user.full_name? %>
+			<h1> <%= link_to user.full_name, user %></h1>
+		<% else %>
+			<h1> <%= link_to user.username.titleize, user %> </h1>
+		<% end %>
+			
 			<h4>Biography</h4>
 			<p> <%= user.biography %></p>	
 		</div>
