@@ -5,7 +5,7 @@
 	<div class="post">
 		<div class="post-header">
 			<h2><%= link_to post.title, post %></h2>
-			<small>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username.titleize %></small>
+			<small>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.username.titleize, post.user %></small>
 		</div>
 		<p class="post-body">
 			<%= post.body %>

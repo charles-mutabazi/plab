@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-xs-4">
+		<%= image_tag("avatar.png", :alt => "Profile Image", class: "img thumbnail") %>
+		<% if @user.full_name? %>
+			<h3 style="text-align:center;"> <%= @user.full_name %></h3>
+		<% else %>
+			<h3 style="text-align:center;"> <%= @user.username.titleize %> </h3>
+		<% end %>
+	</div>
+	<div class="col-xs-8">
+		<h3>Biography</h3>
+		<p> <%= @user.biography %></p>
+	</div>
+</div>
+<hr />
+
+<% if @posts.present? %>
+	<h1>Posts by <%= @user.username.titleize %></h1>
+	<% @posts.each do |post| %>
+		<div class="post">
+			<div class="post-header">
+				<h2><%= link_to post.title, post %>
+				<small>Posted <%= time_ago_in_words(post.created_at) %> ago </small></h2>
+			</div>
+			<p class="post-body">
+				<%= post.body %>
+			</p>
+		</div>
+	<% end %>
+<% else %>
+	<div class="no-post">
+		<h3><i class="glyphicon glyphicon-info-sign"></i> <%= @user.username.titleize %> has not posted anything yet !</h3>
+	</div>
+<% end %>
+
