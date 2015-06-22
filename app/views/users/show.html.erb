@@ -1,13 +1,13 @@
 <div class="row">
-	<div class="col-xs-4">
+	<div class="col-sm-4">
 		<%= image_tag("avatar.png", :alt => "Profile Image", class: "img thumbnail") %>
 		<% if @user.full_name? %>
-			<h3 style="text-align:center;"> <%= @user.full_name %></h3>
+			<h3> <%= @user.full_name %></h3>
 		<% else %>
-			<h3 style="text-align:center;"> <%= @user.username.titleize %> </h3>
+			<h3> <%= @user.username.titleize %> </h3>
 		<% end %>
 	</div>
-	<div class="col-xs-8">
+	<div class="col-sm-8">
 		<h3>Biography</h3>
 		<p> <%= @user.biography %></p>
 	</div>
@@ -23,7 +23,7 @@
 				<small>Posted <%= time_ago_in_words(post.created_at) %> ago </small></h2>
 			</div>
 			<p class="post-body">
-				<%= post.body %>
+				<%= truncate(post.body, length: 450) { link_to "read more", post } %>
 			</p>
 		</div>
 	<% end %>

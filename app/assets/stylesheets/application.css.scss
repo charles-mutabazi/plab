@@ -95,16 +95,18 @@ textarea {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	font-size: 24px;
-	background: url('/assets/banner3.jpg') no-repeat center center fixed;
+	background: url('/assets/banner4.jpg') no-repeat center center fixed;
 	background-size: cover;
 	text-align: center;
 	margin-bottom: 10px;
 
 	h1 {
-		color: white;
+		color: #e9eefb;
+		text-shadow: 1px 1px 2px black, 0 0 0.5em white, 0 0 0.7em white;
 		small {
 			font-size: 20px;
 			font-weight: 200;
+			color: #e9eefb;
 		}
 	}
 }
@@ -144,6 +146,20 @@ textarea {
 		font-weight: normal;
 	}
 
+}
+
+.f-topics {
+	border-left: 1px solid #eee;
+	padding-left: 20px;
+	.topics {
+		padding: 10px;
+		border-radius: 2px;
+		background: #f8f8f8;
+		margin-bottom: 20px;
+		-webkit-box-shadow: 0px 0.5px 5px 0.5px #d9d9d9;
+		-moz-box-shadow: 0px 0.5px 5px 0.5px #d9d9d9;
+		box-shadow: 0px 0.5px 5px 0.5px #d9d9d9;
+	}
 }
 
 .main-footer {

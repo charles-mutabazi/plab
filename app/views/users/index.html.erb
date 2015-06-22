@@ -2,10 +2,10 @@
 <% @users.each do |user|%>
 	<div class="member-box">
 	<div class="row">
-		<div class="col-xs-4">
+		<div class="col-sm-4">
 			<%= image_tag("avatar.png", :alt => "Profile Image", class: "img thumbnail") %>
 		</div>
-		<div class="col-xs-8">
+		<div class="col-sm-8">
 		<% if user.full_name? %>
 			<h1> <%= link_to user.full_name, user %></h1>
 		<% else %>

@@ -8,7 +8,7 @@
 			<small>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.username.titleize, post.user %></small>
 		</div>
 		<p class="post-body">
-			<%= post.body %>
+			<%= truncate(post.body, length: 450) { link_to "read more", post } %>
 		</p>
 	</div>
 <% end %>
