@@ -3,7 +3,7 @@
 	<div class="member-box">
 	<div class="row">
 		<div class="col-sm-4">
-			<%= image_tag("avatar.png", :alt => "Profile Image", class: "img thumbnail") %>
+			<%= image_tag(user.image_path, :alt => "Profile Image", class: "img thumbnail img-responsive") %>
 		</div>
 		<div class="col-sm-8">
 		<% if user.full_name? %>

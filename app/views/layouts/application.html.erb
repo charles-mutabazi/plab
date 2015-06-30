@@ -3,6 +3,7 @@
 <head>
   <title>P*Lab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="assets/parallax.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -75,12 +76,12 @@
 			<% if @welcome_text %>
 			<h1>
 				<%= @welcome_text %> <br>
-				<small><%= @slogan_text %> <br></small> 
+				<small><%= @slogan_text %> <br></small>
 			</h1>
 			<% else %>
 				<h2>
 					<%= @banner_text %> <br>
-					<small><%= @small_text %> <br></small> 
+					<small><%= @small_text %> <br></small>
 				</h2>
 			<% end %>
 		</div>

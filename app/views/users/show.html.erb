@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-sm-4">
-		<%= image_tag("avatar.png", :alt => "Profile Image", class: "img thumbnail") %>
+		<%= image_tag(@user.image_path, :alt => "Profile Image", class: "img thumbnail img-responsive") %>
 		<% if @user.full_name? %>
 			<h3> <%= @user.full_name %></h3>
 		<% else %>
@@ -32,4 +32,3 @@
 		<h3><i class="glyphicon glyphicon-info-sign"></i> <%= @user.username.titleize %> has not posted anything yet !</h3>
 	</div>
 <% end %>
-
